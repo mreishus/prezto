@@ -21,4 +21,6 @@ export VISUAL=vim
 
 alias v=vim -p
 
+mack() { ack "$*" `perl -e '$a = qx('pwd'); $a =~ s/app.*/app/xms; print "$a/$_ " foreach(qw(models views controllers libs));'` }
+
 path=($HOME/bin $path)
