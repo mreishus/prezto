@@ -33,7 +33,7 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'completion' \
   'git' \
-  'screen' \
+  'tmux' \
   'syntax-highlighting' \
   'history-substring-search' \
   'prompt' \
