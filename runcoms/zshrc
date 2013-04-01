@@ -20,3 +20,13 @@ export EDITOR=vim
 export VISUAL=vim
 
 alias v=vim -p
+
+mack() { ack "$*" `perl -e '$a = qx('pwd'); $a =~ s/app.*/app/xms; print "$a/$_ " foreach(qw(models views controllers libs));'` }
+alias ds="dstat -cdngym --top-bio-adv --top-cpu-adv --top-io"
+
+path=($HOME/bin $path)
+
+export AHM_SIMPLE_DEBUG=1
+
+# for tmux powerline?
+PROMPT="$PROMPT"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
