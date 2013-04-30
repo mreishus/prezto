@@ -16,6 +16,12 @@ if (( ! $+commands[ssh-agent] )); then
   return 1
 fi
 
+# Don't run agent when sudoing - I end up with files
+# in ~/.ssh/ belonging to root.
+if [[ "${SUDO_COMMAND}" == '/usr/bin/zsh' ]]; then
+  return 1
+fi
+
 # Load dependencies.
 pmodload 'helper'
 
