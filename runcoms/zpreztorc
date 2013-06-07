@@ -37,7 +37,7 @@ zstyle ':prezto:load' pmodule \
   'syntax-highlighting' \
   'history-substring-search' \
   'prompt' \
-  'ssh-agent'
+  'ssh'
 
 #
 # Editor
