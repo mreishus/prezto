@@ -28,4 +28,3 @@ setopt CLOBBER              # Allow > and >> to overwrite existing files. [mreis
 
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
-
