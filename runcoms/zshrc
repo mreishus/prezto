@@ -11,3 +11,8 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+source /usr/local/share/chruby/chruby.sh
+chruby 2.4.1
+
+export TMUX_TMPDIR="/home/mreishus/.tmux"
+
