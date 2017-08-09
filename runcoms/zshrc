@@ -10,6 +10,8 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+## Matt's stuff below
+
 # Customize to your needs...
 source /usr/local/share/chruby/chruby.sh
 chruby 2.4.1
@@ -17,3 +19,6 @@ chruby 2.4.1
 export TMUX_TMPDIR="/home/mreishus/.tmux"
 export VISUAL=vim
 export EDITOR="$VISUAL"
+
+alias gSS='git submodule init && git submodule sync && git submodule update'
+alias jup='jupyter notebook --no-browser --ip=192.168.1.174 -y'
