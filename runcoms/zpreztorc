@@ -119,7 +119,9 @@ zstyle ':prezto:module:editor' dot-expansion 'yes'
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
 #zstyle ':prezto:module:prompt' theme 'sorin'
-zstyle ':prezto:module:prompt' theme 'steeef'
+#zstyle ':prezto:module:prompt' theme 'steeef'
+zstyle ':prezto:module:prompt' theme 'sorin'
+zstyle ':prezto:module:prompt' theme 'fade' 'blue'
 
 # Set the working directory prompt display length.
 # By default, it is set to 'short'. Set it to 'long' (without '~' expansion)
@@ -164,9 +166,17 @@ zstyle ':prezto:module:prompt' theme 'steeef'
 # Enable ssh-agent forwarding.
 zstyle ':prezto:module:ssh-agent' forwarding 'yes'
 
+### This conflicted, I'm not sure which is right?
+
+### Door 1
 # Set ssh-agent identities to load.
 zstyle ':prezto:module:ssh-agent' identities 'id_rsa'
 # zstyle ':prezto:module:ssh-agent' identities 'id_rsa' 'id_rsa2' 'id_github'
+
+### Door 2
+# Set the SSH identities to load into the agent.
+# zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_rsa2' 'id_github'
+zstyle ':prezto:module:ssh:load' identities 'id_rsa'
 
 #
 # Syntax Highlighting
@@ -174,30 +184,30 @@ zstyle ':prezto:module:ssh-agent' identities 'id_rsa'
 
 # Set syntax highlighters.
 # By default, only the main highlighter is enabled.
-# zstyle ':prezto:module:syntax-highlighting' highlighters \
-#   'main' \
-#   'brackets' \
-#   'pattern' \
-#   'line' \
-#   'cursor' \
-#   'root'
+ zstyle ':prezto:module:syntax-highlighting' highlighters \
+   'main' \
+   'brackets' \
+   'pattern' \
+   'line' \
+   'cursor' \
+   'root'
 #
 # Set syntax highlighting styles.
-# zstyle ':prezto:module:syntax-highlighting' styles \
-#   'builtin' 'bg=blue' \
-#   'command' 'bg=blue' \
-#   'function' 'bg=blue'
+ zstyle ':prezto:module:syntax-highlighting' styles \
+   'builtin' 'bg=blue' \
+   'command' 'bg=blue' \
+   'function' 'bg=blue'
 #
 # Set syntax pattern styles.
-# zstyle ':prezto:module:syntax-highlighting' pattern \
-#   'rm*-rf*' 'fg=white,bold,bg=red'
+ zstyle ':prezto:module:syntax-highlighting' pattern \
+   'rm*-rf*' 'fg=white,bold,bg=red'
 
 #
 # Terminal
 #
 
 # Auto set the tab and window titles.
-# zstyle ':prezto:module:terminal' auto-title 'yes'
+zstyle ':prezto:module:terminal' auto-title 'yes'
 
 # Set the window title format.
 # zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'

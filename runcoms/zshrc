@@ -32,3 +32,9 @@ export AHM_SIMPLE_DEBUG=1
 PROMPT="$PROMPT"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+## Stuff I needed on my linux box
+
+#source /usr/local/share/chruby/chruby.sh
+#chruby 2.4.1
+#export TMUX_TMPDIR="/home/mreishus/.tmux"
