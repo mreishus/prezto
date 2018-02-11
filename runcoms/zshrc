@@ -30,3 +30,5 @@ export AHM_SIMPLE_DEBUG=1
 
 # for tmux powerline?
 PROMPT="$PROMPT"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
