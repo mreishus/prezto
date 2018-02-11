@@ -5,6 +5,11 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+# 2% random chance of running update when creating a new shell
+if [[ $[RANDOM % 50 + 1] == 1 ]]; then
+	${ZDOTDIR:-$HOME}/.zprezto/update-prezto.pl
+fi
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -13,12 +18,29 @@ fi
 ## Matt's stuff below
 
 # Customize to your needs...
-source /usr/local/share/chruby/chruby.sh
-chruby 2.4.1
-
-export TMUX_TMPDIR="/home/mreishus/.tmux"
+export EDITOR=vim
 export VISUAL=vim
-export EDITOR="$VISUAL"
 
-alias gSS='git submodule init && git submodule sync && git submodule update'
-alias jup='jupyter notebook --no-browser --ip=192.168.1.174 -y'
+alias v=vim -p
+alias lb=logbook
+
+mack() { ack "$*" `perl -e '$a = qx('pwd'); $a =~ s/app.*/app/xms; print "$a/$_ " foreach(qw(models views controllers libs));'` }
+alias ds="dstat -cdngym --top-bio-adv --top-cpu-adv --top-io"
+
+path=($HOME/bin $path)
+
+export AHM_SIMPLE_DEBUG=1
+
+# for tmux powerline?
+PROMPT="$PROMPT"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+## Stuff I needed on my linux box
+
+#source /usr/local/share/chruby/chruby.sh
+#chruby 2.4.1
+export TMUX_TMPDIR="$HOME/.tmux"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH=/snap/bin:$PATH
