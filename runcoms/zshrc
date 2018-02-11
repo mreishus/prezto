@@ -37,4 +37,4 @@ PROMPT="$PROMPT"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" 
 
 #source /usr/local/share/chruby/chruby.sh
 #chruby 2.4.1
-#export TMUX_TMPDIR="/home/mreishus/.tmux"
+export TMUX_TMPDIR="$HOME/.tmux"
