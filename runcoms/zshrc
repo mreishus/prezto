@@ -27,7 +27,7 @@ alias lb=logbook
 mack() { ack "$*" `perl -e '$a = qx('pwd'); $a =~ s/app.*/app/xms; print "$a/$_ " foreach(qw(models views controllers libs));'` }
 alias ds="dstat -cdngym --top-bio-adv --top-cpu-adv --top-io"
 
-path=($HOME/bin $path)
+path=($HOME/bin $HOME/.local/bin $path)
 
 export AHM_SIMPLE_DEBUG=1
 
