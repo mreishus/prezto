@@ -178,6 +178,9 @@ else
   alias http-serve='python -m SimpleHTTPServer'
 fi
 
+# Updater [mreishus]
+alias zupdate='~/.zprezto/update-prezto.pl'
+
 #
 # Functions
 #
