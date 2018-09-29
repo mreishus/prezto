@@ -42,3 +42,4 @@ export TMUX_TMPDIR="$HOME/.tmux"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH=/snap/bin:$PATH
+alias jup='jupyter notebook --no-browser --ip=192.168.1.174 -y'
