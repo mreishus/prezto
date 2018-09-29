@@ -74,3 +74,9 @@ if [[ ! -d "$TMPDIR" ]]; then
 fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
+
+## Ubuntu iSnap
+if [[ ! -e "/etc/profile.d/apps-bin-path.sh" ]]; then
+  emulate sh -c 'source /etc/profile.d/apps-bin-path.sh'
+fi
+
